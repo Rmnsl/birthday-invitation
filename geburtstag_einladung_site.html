@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geburtstagseinladung – Sprachauswahl</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom right, #f0e6ff, #d9f4ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    .lang-buttons button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #673ab7;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .lang-buttons button:hover {
+      background-color: #5e35b1;
+    }
+    .content {
+      display: none;
+      max-width: 600px;
+      margin-top: 30px;
+    }
+    .back-btn {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    a.whatsapp {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #25D366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wähle deine Sprache / Choose your language / Обери свою мову</h1>
+  <div class="lang-buttons">
+    <button onclick="showContent('de')">Deutsch 🇩🇪</button>
+    <button onclick="showContent('en')">English 🇬🇧</button>
+    <button onclick="showContent('uk')">Українська 🇺🇦</button>
+    <button onclick="showContent('it')">Italiano 🇮🇹</button>
+  </div>
+
+  <div class="content" id="de">
+    <h2>🎉 Einladung zum Geburtstag 🎉</h2>
+    <p>Ich freue mich sehr, dich zu meinem Geburtstag einzuladen!</p>
+    <p><strong>Datum:</strong> Samstag, 13. September 2025<br />
+    <strong>Zeit:</strong> ab 17:00 Uhr<br />
+    <strong>Ort:</strong> Wird noch mitgeteilt</p>
+    <p>Ich freue mich auf einen festlichen Abend mit dir!</p>
+    <a class="whatsapp" href="https://wa.me/41768014114?text=Ich%20komme%20gerne%20zu%20deinem%20Geburtstag!">📱 Rückmeldung per WhatsApp senden</a>
+    <div class="back-btn" onclick="goBack()">Zurück zur Sprachwahl</div>
+  </div>
+
+  <div class="content" id="en">
+    <h2>🎉 Birthday Invitation 🎉</h2>
+    <p>I’m very happy to invite you to my birthday celebration!</p>
+    <p><strong>Date:</strong> Saturday, September 13, 2025<br />
+    <strong>Time:</strong> from 5:00 PM<br />
+    <strong>Location:</strong> To be announced</p>
+    <p>Looking forward to a festive evening together!</p>
+    <a class="whatsapp" href="https://wa.me/41768014114?text=I'm%20happy%20to%20come%20to%20your%20birthday!">📱 Reply via WhatsApp</a>
+    <div class="back-btn" onclick="goBack()">Back to language selection</div>
+  </div>
+
+  <div class="content" id="uk">
+    <h2>🎉 Запрошення на день народження 🎉</h2>
+    <p>Я з радiстю запрошую тебе на святкування мого дня народження!</p>
+    <p><strong>Дата:</strong> субота, 13 вересня 2025<br />
+    <strong>Час:</strong> з 17:00<br />
+    <strong>Місце:</strong> буде повідомлено пізніше</p>
+    <p>Чекаю на тебе для гарного святкового вечора!</p>
+    <a class="whatsapp" href="https://wa.me/41768014114?text=Я%20із%20задоволенням%20прийду%20на%20твій%20день%20народження!">📱 Відповісти через WhatsApp</a>
+    <div class="back-btn" onclick="goBack()">Повернутися до вибору мови</div>
+  </div>
+
+  <div class="content" id="it">
+    <h2>🎉 Invito di compleanno 🎉</h2>
+    <p>Sono felice di invitarti alla mia festa di compleanno!</p>
+    <p><strong>Data:</strong> Sabato 13 settembre 2025<br />
+    <strong>Ora:</strong> dalle 17:00<br />
+    <strong>Luogo:</strong> da comunicare</p>
+    <p>Non vedo l’ora di festeggiare insieme a te!</p>
+    <a class="whatsapp" href="https://wa.me/41768014114?text=Vengo%20volentieri%20alla%20tua%20festa%20di%20compleanno!">📱 Rispondi via WhatsApp</a>
+    <div class="back-btn" onclick="goBack()">Torna alla selezione della lingua</div>
+  </div>
+
+  <script>
+    function showContent(lang) {
+      document.querySelector('.lang-buttons').style.display = 'none';
+      document.querySelector('h1').style.display = 'none';
+      document.getElementById(lang).style.display = 'block';
+    }
+    function goBack() {
+      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+      document.querySelector('.lang-buttons').style.display = 'block';
+      document.querySelector('h1').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
